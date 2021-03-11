@@ -1,0 +1,38 @@
+Tower (by: sugamo): https://poly.google.com/view/93Ei0IrrdmH
+
+Cloud (by: ISABEL PEPPARD): https://poly.google.com/view/4eM8vGPLofG
+
+Tree (google): https://poly.google.com/view/6pwiq7hSrHr
+
+grass: https://naldzgraphics.net/free-seamless-grass-textures/
+
+green check: https://uxwing.com/success-green-check-mark-icon/
+
+red X: https://www.driversupport.com/knowledge-article/red-x-on-network-icon/
+
+Question 2: https://trends.edugorilla.com/common-sense-test-brain-iq-questions-and-answers-part-4/
+
+Fake magikarp evolution: https://www.deviantart.com/icaro382/art/Magikarp-interrupted-evo-205947372
+
+Fake gyrados: https://www.pinterest.com/pin/604256474974700792/
+
+Gyrados: https://pokemondb.net/pokedex/gyarados
+
+Ship: https://www.viator.com/tours/St-Augustine/The-Pirate-Ship-Black-Raven/d823-142867P1
+
+Question 5: https://www.pinterest.com/pin/295759900511613504/
+
+Cartoon Human: https://www.boredpanda.com/cartoonist-draws-himself-100-cartoon-style-kevin-mcshane/?utm_source=google&utm_medium=organic&utm_campaign=organic
+
+Bugs: https://inews.co.uk/news/technology/google-3d-insects-list-full-ar-bugs-how-see-iphone-android-phone-564896
+
+Treasure Chest: https://poly.google.com/view/du85xSHlin_
+
+
+
+
+
+
+
+
+<a-asset-item id="tree" src="assets/tree/tree01.gltf"></a-asset-item>

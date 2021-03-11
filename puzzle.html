@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle-Page</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+
+    <a-assets>
+        <!--Tag to open models-->
+        <a-asset-item id="terror-tower" src="assets/tower/model.gltf"></a-asset-item>
+        <a-asset-item id="treasure-chest" src="assets/Treasure-chest/model.gltf"></a-asset-item>
+        <a-asset-item id="dark-cloud" src="assets/storm-cloud/cloud.gltf"></a-asset-item>
+        
+        <img id="grass" src="assets/images/grass-texture.jpg"></a-asset-item>
+        <img id="equation" src="assets/images/equation.jpg"></a-asset-item>
+        <img id="ten" src="assets/images/ten.jpg"></a-asset-item>
+        <img id="eleven" src="assets/images/eleven.jpg"></a-asset-item>
+        <img id="seven" src="assets/images/seven.jpg"></a-asset-item>
+        <img id="night-sky" src="assets/images/stars.jpg"></a-asset-item>
+        <img id="green-check" src="assets/images/green-check.jpg"></a-asset-item>
+        <img id="red-x" src="assets/images/red-x.jpg"></a-asset-item>
+        <img id="question-2" src="assets/images/question-2.jpg"></a-asset-item>
+        <img id="two" src="assets/images/two.jpg"></a-asset-item>
+        <img id="six" src="assets/images/six.jpg"></a-asset-item>
+        <img id="fourteen" src="assets/images/fourteen.jpg"></a-asset-item>
+        <img id="question-3" src="assets/images/question-3.jpg"></a-asset-item>
+        <img id="zero" src="assets/images/zero.jpg"></a-asset-item>
+        <img id="nine" src="assets/images/nine.jpg"></a-asset-item>
+        <img id="question-4" src="assets/images/question-4.png"></a-asset-item>
+        <img id="gyrados" src="assets/images/gyarados.jpg"></a-asset-item>
+        <img id="fake-magikarp" src="assets/images/fakemagikarp.jpg"></a-asset-item>
+        <img id="fake-gyrados" src="assets/images/fakegyrados.jpg"></a-asset-item>
+        <img id="magikarp" src="assets/images/magikarp.jpg"></a-asset-item>
+        <img id="cartoon-human" src="assets/images/cartoon-human.jpg"></a-asset-item>
+        <img id="bugs" src="assets/images/bugs.jpg"></a-asset-item>
+        <img id="question-5" src="assets/images/question-5.jpg"></a-asset-item>
+        <img id="ship" src="assets/images/ship.jpg"></a-asset-item>
+        <img id="oof-message" src="assets/images/oof-message.jpg"></a-asset-item>
+    </a-assets>
+
+    <a-scene>
+        <a-sky src="#night-sky"></a-sky>
+
+        
+
+        <!--Camera Entity-->
+    
+    <a-entity id="main-camera" position="0 0 0">
+        <a-camera>
+			<a-entity cursor="fuse:true; fuseTimeout: 2000;"
+			material="color:#000000; shader: flat;"
+			geometry="primitive: sphere; radius:0.006;"
+			position="0 0 -1"
+            scale="2 2 2">
+
+            <!--animation__enter="property: scale; to:3 3 3; dur: 2000; easing:linear;
+			startEvents: mouseenter;"
+
+			animation__leave="property: scale; to:1 1 1; dur: 2000; easing:linear;
+			startEvents: mouseleave;"-->
+
+		</a-camera>
+    </a-entity>
+
+
+
+        <!--Tower Model-->
+
+        <a-entity  
+            position="-27.17 -14.4 -25"
+            rotation="0 -70 0"
+            scale="25.2 19.2 22.1"
+            gltf-model="#terror-tower">  
+        </a-entity>
+
+
+        <!--Cloud 1-->
+
+        <a-entity position="-2.7 0 -63.4"
+                    animation="property:rotation;
+                    to:0 360 0;
+                    loop:true;
+                    dur: 5000;
+                    easing:linear;"> 
+
+            <a-entity  
+                position="30 60 0"
+                rotation="-73.1 114.4 -55.6"
+                gltf-model="#dark-cloud">
+            </a-entity>
+
+        </a-entity>
+
+
+
+        <!--Cloud 2-->
+
+
+        <a-entity position="-2.7 0 -63.4"
+                    animation="property:rotation;
+                    to:0 360 0;
+                    loop:true;
+                    dur: 5000;
+                    easing:linear;"> 
+
+            <a-entity  
+                position="-30 60 0"
+                rotation="-73.1 114.4 -55.6"
+                gltf-model="#dark-cloud">
+            </a-entity>
+
+        </a-entity>
+        
+        
+       
+        
+
+        
+
+        <!--Safety Rails-->
+
+        <!--Rail 1-->
+
+        <a-box
+            position="-0.035 4.989 -44.96"
+            color="red"
+            scale="1.819 11.344"
+            event-set__targetposition="_event:click; _target: #main-camera; position:0 12 -5">
+        </a-box>
+
+
+        <!--Rail 2-->
+
+        <a-box
+            id="rail-2"
+            position="0 0 -1000"
+            rotation="1.022 99.009 -179.2"
+            color="red"
+            scale="1.360 9.518 1.146"
+            event-set__targetposition="_event:click; _target: #main-camera; position:-3 20 -5">
+        </a-box>
+
+        <!--Rail 3-->
+
+        <a-box
+            id="rail-3"
+            position="0 0 -1000"
+            rotation="-1.204 99.45 -179.2"
+            color="red"
+            scale="1.360 7.951 1.146"
+            event-set__targetposition="_event:click; _target: #main-camera; position:-3 29 -7">
+        </a-box>
+
+
+        <!--Rail 4-->
+
+        <a-box
+            id="rail-4"
+            position="0 0 -1000"
+            rotation="1.022 99.009 -179.2"
+            color="red"
+            scale="1.360 7.707 1.146"
+            event-set__targetposition="_event:click; _target: #main-camera; position:-3 37 -5">
+        </a-box>
+
+
+        <!--Rail 5-->
+
+        <a-box
+            id="rail-5"
+            position="0 0 -1000"
+            rotation="1.022 99.009 -179.2"
+            color="red"
+            scale="1.360 5.818 1.146"
+            event-set__targetposition="_event:click; _target: #main-camera; position:-3 42 -5">
+        </a-box>
+
+
+        <!--Rail 6-->
+        <a-box
+            id="rail-6"
+            position="0 0 1000"
+            rotation="1.006 98.544 -179.81"
+            color="red"
+            scale=".961 4.317 1.146"
+            event-set__targetposition="_event:click; _target: #main-camera; position:-3 46 -5">
+        </a-box>
+
+
+
+
+
+
+
+
+<!--Puzzle 1-->
+
+        <!--Question-->
+        <a-box
+            position="-4.609 16.686 -73.67"
+            src="#equation"
+            scale="5.631 2.239 .002">
+        </a-box>
+
+        <!--Asnswer 1 (Correct)-->
+        <a-box
+            position="-4.609 14.022 -73.67"
+            src="#ten"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #rail-2; position: 11.850 15.49 -64.06">
+        </a-box>
+
+        <!--Asnswer 2-->
+        <a-box
+            position=".945 14.022 -73.67"
+            src="#eleven"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #wrong-box; position: .945 14.022 -72">
+        </a-box>
+
+        <!--Asnswer 3-->
+        <a-box
+            position="-9.68 14.022 -73.67"
+            src="#seven"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #wrong-box; position: -9.68 14.022 -72">
+        </a-box>
+
+
+
+
+<!--Puzzle 2-->
+
+        <!--Question-->
+        <a-box
+            position="-8.99 25 -66.57"
+            rotation="0 56.6 0"
+            src="#question-2"
+            scale="5.631 2.239 .002">
+        </a-box>
+
+        <!--Asnswer 1-->
+        <a-box
+            position="-8.99 22 -66.57"
+            rotation="0 56.6 0"
+            src="#two"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #wrong-box-2; position: -7.34 22 -65.66">
+        </a-box>
+
+        <!--Asnswer 2-->
+        <a-box
+            position="-10.29 22 -63.17"
+            src="#fourteen"
+            rotation="0 56.6 0"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #wrong-box-2; position: -9.016 22 -62.115">
+        </a-box>
+
+        <!--Asnswer 3 (correct)-->
+        <a-box
+            position="-7.2 22 -69.17.67"
+            rotation="0 56.6 0"
+            src="#six"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #rail-3; position: .5 24.228 -49.4"
+            >
+        </a-box>
+
+
+<!--Puzzle 3-->
+
+        <!--Question-->
+        <a-box
+            position="-.4 33.714 -70.78"
+            rotation="0 3.240 0"
+            src="#question-3"
+            scale="5.631 2.239 .002">
+        </a-box>
+
+        <!--Asnswer 2 (correct)-->
+        <a-box
+            position="3.08 30.45 -70.78"
+            src="#nine"
+            rotation="0 3.240 0"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #rail-4; position: 9.293 32.256 -63.92">
+        </a-box>
+
+        <!--Asnswer 3 -->
+        <a-box
+            position="-.485 30.45 -70.78"
+            rotation="0 3.240 0"
+            src="#six"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #wrong-box; position: -.485 30.45 -70">
+        </a-box>
+
+
+<!--Puzzle 4-->
+
+        <!--Question-->
+        <a-box
+            position="-6.641 40 -61.13"
+            rotation="0 100 0"
+            src="#question-4"
+            scale="5.631 2.239 .002">
+        </a-box>
+
+        
+
+        <!--Asnswer 1-->
+        <a-box
+            position="-6.83 37.762 -61"
+            src="#fake-magikarp"
+            rotation="0 100 0"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #wrong-box-3; position: -6.83 37.762 -61">
+        </a-box>
+
+        <!--Asnswer 2 (correct)-->
+        <a-box
+            position="-7.2 37.762 -64.43"
+            rotation="0 100 0"
+            src="#gyrados"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #rail-5; position: .501 38.92 -53.36"
+            >
+        </a-box>
+
+
+<!--Puzzle 5-->
+
+        <!--Question-->
+        <a-box
+            position="-.4 44.85 -70.78"
+            rotation="0 3.240 0"
+            src="#question-5"
+            scale="5.631 2.239 .002">
+        </a-box>
+
+        <!--Asnswer 1 (correct)-->
+        <a-box
+            position="-3.9 43 -70.78"
+            rotation="0 3.240 0"
+            src="#cartoon-human"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #rail-6; position: 5.380 44.153 -61.84">
+        </a-box>
+
+        <!--Answer 2-->
+        <a-box
+            position="3.08 43 -70.78"
+            src="#bugs"
+            rotation="0 3.240 0"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #main-camera; position:0 0 -1000000000">
+        </a-box>
+
+        <!--Asnswer 3 -->
+        <a-box
+            position="-.485 43 -70.78"
+            rotation="0 3.240 0"
+            src="#ship"
+            scale="1 1 .002"
+            event-set__targetposition="_event:click; _target: #main-camera; position:0 0 -1000000000">
+        </a-box>
+
+
+
+
+
+
+<!--Trees-->
+
+    <a-entity  
+        position="11.585 -.015 -51.38"
+        scale=".01 .01 .01"
+        gltf-model="#tree">  
+    </a-entity>
+
+    <a-entity  
+        position="0 -.015 -33"
+        scale=".01 .01 .01"
+        gltf-model="#tree">  
+    </a-entity>
+
+    <a-entity  
+        position="26.158 -.015 -32"
+        scale=".01 .01 .01"
+        gltf-model="#tree">  
+    </a-entity>
+
+    <a-entity  
+        position="-20.22 -.015 -40.94"
+        scale=".01 .01 .01"
+        gltf-model="#tree">  
+    </a-entity>
+    
+    <a-entity  
+        position="-14.33 -.015 -49.13"
+        scale=".01 .01 .01"
+        gltf-model="#tree">  
+    </a-entity>
+
+    <a-entity  
+        position="16.397 -.015 -41.57"
+        scale=".01 .01 .01"
+        gltf-model="#tree">  
+    </a-entity>
+        
+
+<!--incorrect-->
+        <a-box
+            id="wrong-box"
+            position="0 0 -1000"
+            src="#red-x"
+            scale="1 1 .002">
+        </a-box>
+
+        <a-box
+            id="wrong-box-2"
+            position="0 0 -1000"
+            rotation="0 56.6 0"
+            src="#red-x"
+            scale="1 1 .002">
+        </a-box>
+
+        <a-box
+            id="wrong-box-3"
+            position="0 0 -1000"
+            rotation="0 100 0"
+            src="#red-x"
+            scale="1 1 .002">
+        </a-box>
+
+        <!--Treasure-->
+
+        <a-entity  
+            position=".315 46.86 -61.79"
+            rotation="180 -7.746 180"
+            gltf-model="#treasure-chest">  
+        </a-entity>
+
+        
+   
+        <!--The Ground-->
+
+        <a-plane position="0 0 0" 
+            rotation="-90 0 0" 
+            width="200" height="200" 
+            src="#grass"
+            shadow>
+        </a-plane>
+        
+
+        
+
+
+    </a-scene>
+    
+</body>
+</html>
